@@ -1,6 +1,8 @@
 alias less="$PAGER"
 alias emacs="$EDITOR"
 
+alias turtle="omz reload"
+
 alias battery="pmset -g batt | egrep -o '[0-9]+%' --color=never"
 alias bc="direct_math"
 alias bell='tput bel'

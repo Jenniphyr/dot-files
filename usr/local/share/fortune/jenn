@@ -1,0 +1,123 @@
+The characters before the first space that you type in the Terminal
+specify the command to run, the rest are information for that command
+called arguments.
+%
+Use `download $SONG_ID [...]` to download one or more songs from YouTube.
+%
+Use `disu` to keep the computer from sleeping.
+%
+Use `fix ./path/to/song [...]` to attempt to fix one or more songs.
+%
+Use `cd /path/to/go/to` to go to another directory on the computer in
+your Terminal.
+%
+A path that starts with `/` is started in the `Macintosh HD` directory.
+%
+A path that starts with `~` is started in your home directory.
+%
+You can drag files or directories into the Terminal to put their path into
+a command.
+%
+Use `up [$NUMBER]` to go up that many directories from the current
+directory. The default if no number is given is 1.
+%
+Use `pwd` to print the full path of the current directory you are in.
+%
+The Terminal will print the name for the directory you are in, at the
+start of the line, this is called the prompt. It occasionally includes
+additional info.
+%
+Use `ls [$PATTERN]` to list stuff found by the pattern. The pattern can be
+used for filtering or searching other directories/paths. The default when
+no pattern is given is to list the contents of the current directory.
+%
+Use `say your message here` to have the computer speak a message.
+%
+Use `echo your message here` to have the Terminal print that text.
+%
+Use `turtle` to see me again!
+%
+Use `cat ./path/to/text/file.txt` to have the Terminal print the contents
+of the specified file.
+%
+Use `jobs` to list commands you have paused.
+%
+Press enter/return after typing a command to run it.
+%
+The `&` character marks the end of the preceeding command and arguments,
+and says to run it in the background when you hit enter. A new command can
+be typed after the `&`.
+%
+The `;` character marks the end the preceeding command and arguments. A
+new command can be typed after the `;`.
+%
+The `$` character means the following characters up to the next space or
+`/` are part of a variable name, replace them with the contents of the
+variable.
+%
+The `?` character means try to find a file matching the rest of the
+characters around the `?`, replacing one character where the `?` is.
+%
+The `*` character means try to find a file matching the rest of the
+characters around the `*`, replacing zero or more characters where the `*`
+is.
+%
+The `\` character means don't use the special meaning of the next
+character.
+%
+The `/` character separates directory names in paths.
+%
+The `|` character means take the output of the command on the left of the
+`|` and send it into the command on the right of the `|`, but not as
+arguments unless you use `|xargs`.
+%
+A single `>` character means take the output of the command on the left of
+the `>` and send it into the file on the right of the `>`, the file will
+be emptied first before the command is run.
+%
+In a command `>>` means take the output of the command on the left of the
+`>>` and append it to the file on the right of the `>>`.
+%
+In a path, a single `.` character means the current directory.
+%
+In a path, `..` means the parent directory of the one current directory.
+%
+The space character separates commands and the information you pass to
+them.
+%
+The `!` character means lookup a previously run command using the
+characters after the `!`.
+%
+Press control+c to quit a running program in the Terminal. A command that
+is handling multiple arguments may need to be quit multiple times.
+%
+Press control+z to pause a running program in the Terminal. A command that
+is handling multiple arguments may advance to the next argument.
+%
+Press control+a to go to the beginning of the line.
+%
+Press control+e to go to the end of the line.
+%
+Press control+k to cut everything from the cursor to the end of the line.
+%
+Press control+u to cut everything from the cursor to the beginning of the
+line.
+%
+Press control+w to cut the next/rest-of-the word after the cursor.
+%
+Press option+w to cut the previous/rest-of-the word before the cursor.
+%
+Press control+y to paste the last thing you cut in the Terminal.
+%
+Press control+t to swap the characters on each side of the cursor.
+%
+Press option+t to swap the words on each side of the cursor.
+%
+Press tab to ask the Terminal to try to fill in the next part of the
+command.
+%
+Hold option and click a place in the line to jump there.
+%
+Hello Jenn!
+%
+I'm a turtle!
