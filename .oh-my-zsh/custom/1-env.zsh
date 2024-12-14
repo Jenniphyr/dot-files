@@ -6,6 +6,7 @@ export PAGER=/usr/share/vim/vim*/macros/less.sh
 export MANPAGER="/usr/bin/less -r"
 export GIT_PAGER="/usr/bin/less -r"
 export HOMEBREW_NO_ENV_HINTS=true
+export HOMEBREW_INSTALL_BADGE="🐢"
 export LANG="en_CA.UTF-8"
 export LESS='-R -i'
 export MORE='-R -i'
