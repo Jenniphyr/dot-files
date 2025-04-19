@@ -71,18 +71,13 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# MOTD config must be before plugins
-export ZSH_MOTD_DATABASE="$HOME/Developer/dot-files/usr/local/share/fortune/jenn"
-export ZSH_MOTD_COW="turtle"
-export ZSH_MOTD_ALWAYS="show the full header every time"
-export ZSH_MOTD_NO_WORD_OF_THE_DAY="disable the display of a random word"
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    turtle
     zsh-motd
     brew
     #colored-man-pages # broken
