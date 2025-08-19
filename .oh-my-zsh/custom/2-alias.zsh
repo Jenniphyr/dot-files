@@ -1,6 +1,7 @@
 alias less="$PAGER"
 alias emacs="$EDITOR"
 
+alias aws="docker run -v ~/.aws:/root/.aws amazon/aws-cli:latest"
 alias battery="pmset -g batt | egrep -o '[0-9]+%' --color=never"
 alias bc="direct_math"
 alias bell='tput bel'
@@ -28,6 +29,7 @@ alias emptycache='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 alias fgrep='grep -F --color=always'
 alias find='cfind'
 alias gpg-restart-agent='gpgconf --kill gpg-agent'
+alias gpg-check='gpg --quiet --sign --armor <<< ok | gpg --decrypt 2>/dev/null'
 alias gzip='pigz -9'
 alias ip="echo 'eth0\nen0\nen1' | xargs -n1 ipconfig getifaddr"
 alias jsay='say -v Kyoko'
@@ -62,7 +64,9 @@ alias python=python3
 alias ql='qlmanage -p 2>/dev/null'
 alias realpath='readlink -f'
 alias reboot='launchctl reboot userspace'
-alias restart-gpg-agent='gpgconf --kill gpg-agent'
+alias restart-gpg-agent=gpg-restart-agent
+alias check-gpg-agent=gpg-check
+alias s_client='openssl s_client'
 alias scan='airport -s'
 alias screen='screen -a'
 alias screensaver='ScreenSaverEngine 2>/dev/null'
@@ -77,6 +81,7 @@ alias sqlite='sqlite3'
 alias stabilizeIp='for i in `seq 1 30`; do getIp ; done | sort -u'
 alias sudo='csudo '
 alias sudoedit='sudo -e'
+alias sum='jq -s add'
 alias swap='pushd +1'
 alias tail='tail -f'
 alias tar='ctar'
@@ -84,7 +89,7 @@ alias top='top -u -stats pid,command,cpu,time,mem,state,uid,user'
 alias transmission='transmission-remote'
 alias tree="tree -aC -I '.git|node_modules|.DS_Store|target'"
 alias trim="tr -d ' '"
-# the below is augmented by cd being aliased to my chdir fn which allows upping n at a time
+alias unquarantine='xattr -d com.apple.quarantine'
 alias version="sw_vers"
 #alias wait='sleep' # wait is for waiting for processes to end
 alias wifi='airport -I'
