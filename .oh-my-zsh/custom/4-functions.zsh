@@ -1,9 +1,9 @@
 function download() {
     local -a PREMIUM_FLAGS
-    PREMIUM_FLAGS=(--cookies-from-browser "firefox:$HOME/Library/Application Support/Firefox/Profiles/fh3dhswl.default-1472409901684")
+    #PREMIUM_FLAGS=(--cookies-from-browser "firefox:$HOME/Library/Application Support/Firefox/Profiles/fh3dhswl.default-1472409901684")
     for label in "$@"; do
         ( yt-dlp ${PREMIUM_FLAGS[@]} --no-mtime -f m4a    "https://www.youtube.com/watch?v=$label" || \
-              yt-dlp ${PREMIUM_FLAGS[@]} --no-mtime -f mp4 -x "https://www.youtube.com/watch?v=$label" ) &
+          yt-dlp ${PREMIUM_FLAGS[@]} --no-mtime -t mp4 -x "https://www.youtube.com/watch?v=$label" ) &
     done
     wait
 }
