@@ -6,7 +6,7 @@
     <string>local.eve.battery.watcher</string>
     <key>ProgramArguments</key>
     <array>
-      <string>/Users/camdennarzt/Developer/Bash/dot-files/usr/local/bin/battery-watcher</string>
+      <string>/Users/jennifernarzt/Developer/battery-watcher.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
