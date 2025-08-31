@@ -1,7 +1,6 @@
 [user]
-	name = Camden Narzt
-	email = c.narzt@me.com
-	signingkey = 45CDAC6F53A7A2EE3D294A79E349304DE45D816B
+	email = jennifer.narzt@gmail.com
+	name = Jennifer Narzt
 [blame]
 	coloring = highlightRecent
 [core]
@@ -9,7 +8,7 @@
 	compression = 9
 	editor = emacs
 # excludesfile default is: ~/.config/git/ignore
-	excludesfile = ~/Developer/Bash/dot-files/.gitignore
+	excludesfile = ~/Developer/dot-files/.gitignore
 	fsyncMethod = writeout-only
 	looseCompression = 9
 #       pager = delta --dark --theme TwoDark
@@ -18,7 +17,7 @@
 #       untrackedCache = true
 #	fsync = none
 #	filemode = false
-	hooksPath = ~/Developer/Bash/dot-files/.git/hooks
+	hooksPath = ~/Developer/dot-files/.git/hooks
 #	sshCommand = ssh -vvvv
 [pack]
 	compression = 9
@@ -35,7 +34,7 @@
 [sendemail]
 # 	smtpencryption = tls
 # 	smtpserver = smtp.gmail.com
-# 	smtpuser = camden.narzt@gmail.com
+# 	smtpuser = jennifer.narzt@gmail.com
 # 	smtpserverport = 587
 [color]
 	ui = auto
@@ -102,7 +101,7 @@
 	#program = # if broken try to set to a script that finds gpg
 [commit]
 	verbose = true
-	gpgsign = true
+	gpgsign = false
 	template = ~/.config/git/commitMsg
 [url "git@gitlab.phusion.nl:"]
 	insteadOf = https://gitlab.phusion.nl/
