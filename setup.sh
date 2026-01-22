@@ -166,7 +166,7 @@ function main() {
     # pin formulae that shouldn't be changed without care & attention
     brew pin emacs dnsmasq transmission-cli gnupg mailpit "postgresql@${PGVER}" colima lima
     if [ "$(uname -m)" = "arm64" ]; then
-        brew pin batt lume
+        brew pin batt tart
     fi
 
 
@@ -233,7 +233,7 @@ function main() {
             filename=$(basename "$file")
             local formula="${filename%.plist}"
             local plist_path="$HOMEBREW_PREFIX/opt/${formula#homebrew.mxcl.}/${filename}"
-            if [ "$(uname -m)" != "arm64" ] && [ "$formula" = 'homebrew.mxcl.lume' ]; then
+            if [ "$(uname -m)" != "arm64" ] && [ "$formula" = 'homebrew.mxcl.tart' ]; then
                 continue
             fi
             if [[ "$file" == *"/LaunchDaemons/"* ]]; then
