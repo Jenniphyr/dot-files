@@ -7,18 +7,19 @@ fi
 export NODE_REPL_HISTORY="$HOME/.history/node"
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PYTHON_HISTORY="$HOME/.history/python"
-# /Users/camdennarzt/.bun_repl_history
+#export BUN_REPL_HISTORY="$HOME/.history/bun" # not real
 export RUBY_DEBUG_HISTORY_FILE="$HOME/.history/rdbg"
 export SQLITE_HISTORY="$HOME/.history/sqlite"
 export DOCKER_SCAN_SUGGEST=false
 export DOTNET_GENERATE_ASPNET_CERTIFICATE=false
-export DOTNET_ROOT="$(brew --prefix dotnet)/libexec"
-export CUA_TELEMETRY_ENABLED=false
-export LUME_TELEMETRY_ENABLED=false
 
 if [ "$(uname)" = "Darwin" ]; then
     SDKROOT=$(xcrun -sdk macosx --show-sdk-path)
     export SDKROOT
+
+    export DOTNET_ROOT="$(brew --prefix dotnet)/libexec"
+    export CUA_TELEMETRY_ENABLED=false
+    export LUME_TELEMETRY_ENABLED=false
 
     # shellcheck disable=SC1090
     source <(brew shellenv)
