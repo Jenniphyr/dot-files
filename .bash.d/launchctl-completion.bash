@@ -9,7 +9,9 @@
 #  complete plist files with relative paths when pwd is one of /library/ ~/library or a launch* dir in those
 
 log () {
-    echo "$*" >> /tmp/debug.log
+    if [ -n "$DEBUG_LAUNCHCTL_COMP" ]; then
+        echo "$*" >> /tmp/launchctl-completion-debug.log
+    fi
 }
 
 __launchctl_paths ()
@@ -157,7 +159,7 @@ _launchctl2 ()
             elif [ -z "${cur}" ]; then
                 possibilities=("$(__launchctl_list_domains | xargs -n1 printf '%s/\n' | paste -sd ' ' -)")
                 compgen -o nospace -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -174,7 +176,7 @@ _launchctl2 ()
             if [ -z "${cur}" ]; then
                 possibilities=("$(__launchctl_list_domains | xargs -n1 printf '%s/\n' | paste -sd ' ' -)")
                 compgen -o nospace -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -281,7 +283,7 @@ _launchctl2 ()
                 if [ -z "${cur}" ]; then
                     possibilities=("$(__launchctl_list_domains | paste -sd ' ' -)")
                     compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-                elif [[ "${cur}" != */*/* ]]; then
+                elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                     possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                     compopt -o nospace #doesn't work if set in compgen here...
                     compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -339,7 +341,7 @@ _launchctl2 ()
             if [ -z "${cur}" ]; then
                 local possibilities=("$(__launchctl_list_domains | paste -sd ' ' -)")
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 local possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -354,7 +356,7 @@ _launchctl2 ()
             if [ -z "${cur}" ]; then
                 local possibilities=("$(__launchctl_list_domains | paste -sd ' ' -)")
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 local possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -420,7 +422,7 @@ _launchctl2 ()
             elif [ -z "${cur}" ]; then
                 possibilities+=("$(__launchctl_list_domains | xargs -n1 printf '%s/\n' | paste -sd ' ' -)")
                 compgen -o nospace -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -439,7 +441,7 @@ _launchctl2 ()
                 if [ -z "${cur}" ]; then
                     local possibilities=("$(__launchctl_list_domains | paste -sd ' ' -)")
                     compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-                elif [[ "${cur}" != */*/* ]]; then
+                elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                     local possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                     compopt -o nospace #doesn't work if set in compgen here...
                     compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
@@ -531,7 +533,7 @@ _launchctl2 ()
             if [ -z "${cur}" ]; then
                 local possibilities=("$(__launchctl_list_domains | paste -sd ' ' -)")
                 compgen -o nospace -S / -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
-            elif [[ "${cur}" != */*/* ]]; then
+            elif [[ "${cur}" != */*/* ]] && [[ "${cur}" != system/* ]]; then
                 local possibilities=("$(__launchctl_list_domain_targets "${cur}" | paste -sd ' ' -)")
                 compopt -o nospace #doesn't work if set in compgen here...
                 compgen -o nospace -V COMPREPLY -W "${possibilities[*]}" -- "${cur}"
