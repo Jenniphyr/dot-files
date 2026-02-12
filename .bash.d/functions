@@ -298,7 +298,15 @@ function getPasswordFor {
         echo "Missing item title" >&2
         return 1
     fi
-    op read --no-newline "op://${2:-Private}/${1:-}/password"
+    readarray -t id < <(op item list | awk "/$1/{print \$1}")
+    if [ "${#id[@]}" -gt 1 ]; then
+        echo "Too many matches for title" >&2
+        return 1
+    elif [ "${#id[@]}" -eq 0 ]; then
+        echo "No matches for title" >&2
+        return 1
+    fi
+    op read --no-newline "op://${2:-Private}/${id[*]}/password"
 }
 
 function getUsernameFor {
